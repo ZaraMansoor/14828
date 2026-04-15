@@ -42,6 +42,10 @@
       mutation.addedNodes.forEach((node) => {
         if (node.nodeName === 'IFRAME' && node.src.startsWith(TARGET_ORIGIN)) {
           console.log("✅ Extension Iframe detected!");
+
+          function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+          }
   
           // Send your payload once the iframe is ready
           node.onload = async () => {
