@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Test Page</h1>
+<h1>Test Page async</h1>
 <button id="run-ocr-btn">Start OCR Analysis</button>
 
 
@@ -44,7 +44,7 @@
           console.log("✅ Extension Iframe detected!");
   
           // Send your payload once the iframe is ready
-          node.onload = () => {
+          node.onload = async () => {
             await sleep(50);
             node.contentWindow.postMessage({
               type: "doOcr",
