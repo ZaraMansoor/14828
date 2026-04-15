@@ -49,7 +49,7 @@
   
           // Send your payload once the iframe is ready
           node.onload = async () => {
-            await sleep(50);
+            await sleep(80);
             node.contentWindow.postMessage({
               type: "doOcr",
               mainUrl: window.location.href, // This identifies your site to the extension
